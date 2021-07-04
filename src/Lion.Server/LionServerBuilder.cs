@@ -1,4 +1,4 @@
-﻿using Lion.Abstractions;
+﻿using Lion.Common;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 

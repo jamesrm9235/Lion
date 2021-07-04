@@ -1,23 +1,18 @@
-﻿using Lion.Server.Hypermedia;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace Lion.Server.Models
 {
     public abstract class Representation
     {
-        public abstract string Type { get; }
+        public Dictionary<string, Link> Links { get; set; } = new Dictionary<string, Link>();
 
-        public List<Link> Links { get; set; } = new List<Link>();
-
-        public void AddLink(Link link)
+        public void AddLink(string rel, Link link)
         {
-            var exists = Links.FirstOrDefault(o => o.Rel == link.Rel);
-            if (exists != null)
+            if (Links.ContainsKey(rel))
             {
-                Links.Remove(exists);
+                Links.Remove(rel);
             }
-            Links.Add(link);
+            Links.Add(rel, link);
         }
     }
 }

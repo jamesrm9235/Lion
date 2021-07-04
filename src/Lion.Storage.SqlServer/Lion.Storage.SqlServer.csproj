@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Lion.Abstractions\Lion.Abstractions.csproj" />
+    <ProjectReference Include="..\Lion.Common\Lion.Common.csproj" />
   </ItemGroup>
 
 </Project>

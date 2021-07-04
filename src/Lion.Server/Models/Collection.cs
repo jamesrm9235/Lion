@@ -2,9 +2,8 @@
 
 namespace Lion.Server.Models
 {
-    public sealed class Collection<T> : Representation where T : Representation
+    public sealed class Collection<T> : Representation where T : class
     {
-        public override string Type => "collection";
         public List<T> Data { get; set; }
     }
 }
